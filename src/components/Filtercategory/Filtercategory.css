@@ -1,0 +1,95 @@
+.filter_category {
+    margin-top: 120px;
+    padding: 20px;
+}
+
+.filter_btn {
+    padding: 5px;
+    border: 1px solid rgb(236, 234, 234);
+    border-radius: 5px;
+    /* background-color: aqua; */
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.filter_btn i {
+    font-size: 18px;
+}
+
+.filter_category_content {
+    border: 1px solid rgb(236, 234, 234);
+    padding: 5px;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    gap: 10px;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    /* cursor: pointer; */
+    
+}
+
+.filter_category_content::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Opera */
+}
+.filter_category_content {
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+    scrollbar-width: none; /* For Firefox */
+}
+
+
+.category_card {
+    width: 150px;
+    height: auto;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    /* background-color: aqua; */
+    cursor: pointer;
+}
+.category_card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+.category_card p {
+    text-align: center;
+}
+
+
+
+@media (max-width: 500px) {
+    .filter_category {
+        margin-top: 100px;
+        padding: 10px;
+    }
+    .category_card {
+        width: 130px;
+        font-size: 12px;
+    }
+    .category_card img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 450px) {
+    .category_card {
+        width: 120px;
+        font-size: 10px;
+    }
+    .category_card img {
+        width: 90px;
+        height: 90px;
+    }
+}

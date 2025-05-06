@@ -1,26 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ffffff;
+  overflow-x: hidden;
+}
+
+.main_section {
+  max-width: 1440px;
+  margin: auto;
+  position: relative;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+/* Form styles */
+.form_hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #e5e7eb;
+}
+
+.form_input_fields .input_data {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
+  gap: 2px;
+  padding: 5px 10px;
+}
+
+.form_input_fields label {
+  font-size: 18px;
+}
+
+.form_input_fields input, 
+.form_input_fields select,
+.form_input_fields textarea {
+  width: 100%;
+  padding: 5px 10px;
+  font-size: 16px;
+  border: 1px solid gainsboro;
+  margin-bottom: 10px;
+  outline: none;
+}
+
+.form_input_fields textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.form_name_input, 
+.form_contact_input {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.form_domains_input .input_data {
+  flex-direction: row;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.submit_form input {
+  width: 100%;
+  text-align: center;
+  padding: 8px;
+  font-size: 18px;
+  outline: none;
+  border: none;
+  background-color: #0081C7;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+/* Business card styles */
+.business_card {
+  width: 100%;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid rgb(236, 234, 234);
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  gap: 20px;
+}
+
+.business_imgg, .business_img {
+  width: 210px;
+  height: 210px;
+}
+
+.business_imgg img, .business_img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.business_info {
+  flex: 3;
+}
+
+.business_info .business_name {
+  margin-top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.business_name span {
+  font-size: 22px;
+  color: #111;
+  font-weight: 500;
+}
+
+.business_name i {
+  font-size: 24px;
+  color: #0081C7;
+  cursor: pointer;
+}
+
+.business_rating {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 5px;
+  margin-top: 15px;
+}
+
+.business_rating span {
+  padding: 1px 5px;
+  font-size: 12px;
+  background-color: #F1C644;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.business_rating .rating {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 5px;
+}
+
+.business_rating i {
+  color: #F1C644;
+  font-size: 16px;
+}
+
+.business_location {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  color: gray;
+  font-size: 18px;
+  gap: 5px;
+  margin: 10px 0;
+}
+
+.business_location i {
+  font-size: 24px;
+  font-weight: lighter;
+}
+
+.business_keywords {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+}
+
+.business_keywords span {
+  padding: 3px;
+  font-size: 12px;
+  border-radius: 5px;
+  background-color: #E1E1E1;
+  color: #111;
+}
+
+.business_contact {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.business_contact .business_call_btn {
+  text-decoration: none;
+  background-color: #0081C7;
+  color: #fff;
+  padding: 4px 30px;
+  font-size: 18px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-weight: 300;
+}
+
+.business_call_btn i {
+  font-size: 22px;
+}
+
+.business_contact p {
+  padding: 4px 30px;
+  border: 1px solid #0081C7;
+  color: #0081C7;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .form_input_fields .input_data {
+    width: 100%;
+  }
+  
+  .business_card {
+    flex-direction: column;
+  }
+  
+  .business_imgg, .business_img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+  }
+  
+  .business_contact {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 500px) {
+  .form_input_fields label {
+    font-size: 16px;
+  }
+  
+  .form_input_fields input, 
+  .form_input_fields select,
+  .form_input_fields textarea {
+    font-size: 14px;
+  }
+  
+  .business_name span {
+    font-size: 18px;
+  }
+  
+  .business_location {
+    font-size: 14px;
+  }
+  
+  .business_contact .business_call_btn,
+  .business_contact p {
+    padding: 4px 15px;
+    font-size: 14px;
+  }
 }

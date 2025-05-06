@@ -1,0 +1,221 @@
+.account_container {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    margin-top: 126px;
+}
+
+
+.account_links_content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vw;
+    
+}
+
+.account_links_content .slide_account_link {
+    background-color: #0081C7;
+    color: #fff;
+    padding: 40px 0px;
+    border-radius: 0 10px 10px 0;
+    display: none;
+}
+
+
+.account_links_content ul {
+    box-shadow: 0 0px 8px rgba(0, 0, 0, 0.1), /* Larger shadow */
+                0 0px 4px rgba(0, 0, 0, 0.06);
+    border-bottom: none;
+    background-color: #fff;
+    height: 100%;
+}
+
+
+
+
+.account_links_content ul li {
+    cursor: pointer;
+    padding: 10px 30px;
+    border-bottom: 1px solid gray;
+    color: gray;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+}
+.account_links_content ul li.active {
+    color: #0081C7;
+}
+.account_links_content ul li i {
+    font-size: 26px;
+}
+
+
+
+
+/* My profile page */
+.myProfile_content {
+    padding: 40px;
+}
+
+.myProfile_content h1 {
+    font-size: 26px;
+    font-weight: 500;
+    color: rgb(34, 34, 34);
+    margin-bottom: 30px;
+}
+
+.profile_change_img {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.user_info_form .profile_img {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.user_info_form img {
+    width: 100%;
+    height: 100%; /* Maintain aspect ratio */
+}
+.profile_change_img button {
+    background-color: #0081C7;
+    color: #fff;
+    outline: none;
+    border: none;
+    padding: 8px 20px;
+    border: 1px solid #0081C7;
+    border-radius: 5px;
+    font-size: 14px;
+}
+.profile_change_img button:last-child {
+    background-color: #fff;
+    border: 1px solid #0081C7;
+    color: #0081C7;
+}
+
+.user_info_form p {
+    margin-bottom: 5px;
+}
+.username_input, .email_input, .name_input {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+.username_input input, .email_input input {
+    outline: none;
+    padding: 5px;
+    width: 500px;
+}
+
+.name_input div {
+    display: flex;
+    gap: 20px;
+}
+.name_input div input {
+    width: 240px;
+    padding: 5px;
+}
+
+
+.update_btn button {
+    margin-top: 20px;
+    width: 500px;
+    text-align: center;
+    padding: 5px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background-color: #0081C7;
+    border-radius: 3px;
+}
+
+
+
+
+
+
+
+
+@media (max-width: 800px) {
+    .account_links_content ul li {
+        padding: 10px 15px;
+        gap: 6px;
+        font-size: 15px;
+    }
+    /* my profile */
+    .profile_change_img button {
+        padding: 5px 20px;
+    }
+    .username_input input, .email_input input, .update_btn button {
+        width: 350px;
+    }
+    .name_input div input {
+        width: 165px;
+        padding: 5px;
+    }
+}
+
+
+
+@media (max-width: 500px) {
+    .account_container {
+        margin-top: 97px;
+    }
+    .account_links_content {
+        transform: translateX(-150px);
+        position: absolute;
+        left: 0;
+        z-index: 100;
+        top: 110px;
+        transition: .3s ease;
+    }
+    .account_links_content.show_profileLinks {
+        transform: translateX(0);
+    }
+    .account_links_content ul {
+        width: 150px;
+    }
+
+    .account_links_content .slide_account_link {
+        display: block;
+    }
+    /* my profile */
+    .account_main {
+        width: 100vw;
+    }
+    .myProfile_content {
+        padding: 20px;
+    }
+}
+
+
+@media (max-width: 350px) {
+    /* my proflie */
+    .profile_change_img {
+        display: block;
+        gap: 0px;
+    }
+    .profile_change_img .profile_img {
+        margin-bottom: 20px;
+    }
+    .profile_change_img button {
+        margin: 0 10px;
+    }
+    .username_input input, .email_input input, .update_btn button {
+        width: 90vw;
+    }
+    .name_input div input {
+        width: 90%;
+        padding: 5px;
+    }
+}

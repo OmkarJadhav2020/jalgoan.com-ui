@@ -1,0 +1,93 @@
+.stocktickle_container {
+    margin-top: 120px;
+    padding: 15px;
+    display: flex;
+    gap: 6px;
+    justify-content: start;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; /* Enables smooth scrolling on iOS */
+}
+
+/* Hide scrollbar */
+.stocktickle_container::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Opera */
+}
+.stocktickle_container {
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+    scrollbar-width: none; /* For Firefox */
+}
+
+.stock_tickle {
+    width: 105px;
+    min-width: 105px;
+    padding: 5px;
+    border: 1px solid rgb(236, 234, 234);
+    border-radius: 5px 5px 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #fff;
+}
+
+.stock_tickle .stock_title {
+    color: royalblue;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.stock_tickle .hr_line {
+    width: 100%;
+    height: 1px;
+    background-color: royalblue;
+}
+
+.stock_tickle .stock_price {
+    color: royalblue;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.stock_price_updown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: royalblue;
+}
+
+.stock_price_updown.down i {
+    color: red;
+}
+
+.stock_price_updown i {
+    color: green;
+    font-size: 22px;
+}
+
+.stock_price_percentage {
+    color: royalblue;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+
+
+
+@media (max-width: 500px) {
+    .stocktickle_container {
+        margin-top: 100px;
+    }
+
+    /* .stock_tickle .stock_title {
+        font-size: 12px;
+    }
+    .stock_tickle .stock_price {
+        font-size: 12px;
+    }
+    .stock_price_updown {
+        font-size: 12px;
+    } */
+}

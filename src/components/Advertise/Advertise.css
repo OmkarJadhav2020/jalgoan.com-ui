@@ -1,0 +1,159 @@
+.advertise_container {
+    /* margin-top: 25vh; */
+    padding: 10px 20px;
+    border: 1px solid rgb(236, 234, 234);
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+
+
+.slide_container {
+    position: relative;
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+    width: 48vw;
+
+}
+
+.slider_img_div {
+    width: 100%;
+    height: 350px;
+}
+
+.slider_img_div_hidden {
+    display: none;
+}
+.indicators {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 1rem;
+    left: 0;
+    right: 0;
+    gap: 10px;
+}
+.indicator {
+    background-color: #fff;
+    height: 0.5rem;
+    width: 0.5rem;
+    border-radius: 100%;
+    opacity: .5;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.indicator_active {
+    opacity: 1;
+    height: 0.6rem;
+    width: 0.6rem;
+}
+
+.banner_ads {
+    width: 48vw;
+    display: flex;
+    gap: 8px;
+    /* flex: 1; */
+}
+
+.banner_ads img {
+    width: 100%;
+    height: 350px;
+}
+
+
+@media (max-width: 1250px){
+    .banner_ads img {
+        height: 300px;
+    }
+    .slider_img_div {
+        height: 300px;
+    }
+}
+
+@media (max-width: 1100px) {
+    /* .advertise_container {
+        padding: 10px 15px;
+        justify-content: center;
+    } */
+    .banner_ads img {
+        height: 270px;
+    }
+    .slider_img_div {
+        height: 270px;
+    }
+
+    /* .slide_container {
+        position: relative;
+        display: flex;
+        width: 45vw;
+    }
+    .banner_ads {
+        width: 46vw;
+    } */
+}
+
+
+@media (max-width: 1030px) {
+    .slider_img_div {
+        height: 250px;
+    }
+    .banner_ads img {
+        height: 250px;
+    }
+}
+
+@media (max-width: 855px) {
+    .slide_container {
+        width: 80vw;
+    }
+    .slider_img_div {
+        height: 280px;
+    }
+    .banner_ads img:last-child {
+        display: none;
+    }
+    .banner_ads img {
+        width: 100%;
+        height: 280px;
+    }
+}
+
+
+@media (max-width: 500px) {
+    .advertise_container {
+        flex-direction: column;
+        padding: 10px 5px;
+    }
+    .banner_ads img {
+        display: none;
+    }
+
+    .slide_container {
+        width: 97vw;
+    }
+    .slider_img_div {
+        height: 220px;
+    }
+
+
+    .indicator {
+        height: 0.4rem;
+        width: 0.4rem;
+    }
+}
+
+
+@media (max-width: 380px) {
+    .slider_img_div {
+        height: 190px;
+    }
+}
+@media (max-width: 350px) {
+    .slider_img_div {
+        height: 165px;
+    }
+}

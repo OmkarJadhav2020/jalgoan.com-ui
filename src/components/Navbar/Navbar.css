@@ -1,0 +1,116 @@
+
+.header {
+    position: fixed;
+    max-width: 1440px;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #fff;
+}
+
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 50px;
+    border-bottom: 1px solid rgb(236, 234, 234);
+    
+}
+.nav_logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.nav_logo .icon {
+    width: 25px;
+}
+.nav_logo .logo {
+    width: 140px;
+}
+
+.nav_links {
+    display: flex;
+    gap: 20px;
+}
+.navbar_menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.navbar_menu li {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.nav_login {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    font-weight: 500;
+    font-size: 18px;
+}
+.nav_login i {
+    font-size: 26px;
+    color: #0081C7;
+}
+.nav_login .login_btn {
+    font-size: 16px;
+    background-color: #0081C7;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 8px 14px;
+}
+
+.nav_login .menu {
+    font-size: 26px;
+    color: #0081C7;
+    display: none;
+}
+
+@media (max-width: 855px) {
+    .navbar_menu, .nav_login .login_btn {
+        display: none;
+    }
+    .nav_login .menu {
+        display: block;
+    }
+}
+
+
+
+
+@media (max-width: 500px) {
+    .header {
+        width: 100vw;
+    }
+    .navbar {
+        width: 100vw;
+        padding: 10px 20px;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        background: #fff;
+    }
+    .nav_login .menu {
+        display: block;
+    }
+
+    .select_city {
+        gap: 10px;
+        padding: 10px;
+        justify-content: center;
+        flex: 1;
+        font-size: 14px;
+        border: 1px solid rgb(236, 234, 234);
+    }
+    .main_search {
+        flex: 2;
+    }
+}
+
+

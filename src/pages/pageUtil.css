@@ -1,0 +1,23 @@
+.page_location_tow {
+    margin-top: 140px;
+    padding: 20px;
+    font-size: 14px;
+    color: gray;
+  }
+  
+  .page_location_tow span {
+    color: #0081C7;
+  }
+  
+  .company_contact_details {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    overflow-x: hidden;
+    position: relative;
+  }
+  
+  .main_section {
+    position: relative;
+    overflow: hidden;
+  }

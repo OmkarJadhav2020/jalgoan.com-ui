@@ -1,0 +1,74 @@
+.nav_serach {
+    /* margin-top: -13px; */
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    border-bottom: 1px solid rgb(236, 234, 234);
+    position: fixed;
+    top: 56px;
+    width: 100%;
+    z-index: 1000;
+    background-color: #fff;
+}
+
+.select_city {
+    border-radius: 20px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+    padding: 7px;
+    /* flex: 1; */
+    font-size: 16px;
+    border: 1px solid rgb(236, 234, 234);
+}
+
+.main_search {
+    width: 50%;
+    border-radius: 20px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+    padding: 7px;
+    /* flex: 5; */
+    font-size: 18px;
+    border: 1px solid rgb(236, 234, 234);
+}
+.main_search .input_business {
+    max-width: 500px;
+
+    outline: none;
+    border: none;
+    width: 100%;
+    font-size: 16px;
+}
+
+@media (max-width: 855px) {
+    .select_city {
+        /* flex: 3; */
+    }
+}
+
+@media (max-width: 500px) {
+    .nav_serach {
+        margin-top: 11px;
+        top: 35px;
+        gap: 10px;
+        width: 100vw;
+    }
+    .select_city {
+        /* flex: 3; */
+        font-size: 12px;
+    }
+    .main_search .input_business {
+        font-size: 12px;
+    }
+    .stocktickle_container {
+        margin-top: 88px;
+    }
+
+    
+}

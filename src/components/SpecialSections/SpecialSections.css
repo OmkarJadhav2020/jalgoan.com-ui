@@ -1,0 +1,79 @@
+.special_section {
+    position: fixed; /* Fixed positioning relative to the viewport */
+    top: 50%; /* Center vertically */
+    right: -45px; /* Align to the right */
+    transform: translateY(-50%); /* Adjust vertical centering */
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    z-index: 1000;
+}
+
+.special_section_btns {
+    position: relative;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; /* Align buttons to the end horizontally */
+    gap: 90px  ; /* Add gap between buttons */
+}
+
+.special_section_btns .special_btn {
+    /* width: 200px; */
+    height: 40px; /* Increase height for better visibility after rotation */
+    padding: 5px 25px; /* Adjust padding to fit text */
+    text-align: center;
+    transform: rotate(-90deg); /* Rotate the button */
+    border-radius: 15px 15px 0 0px;
+    color: #292929;
+    font-size: 14px;
+}
+
+.special_section_btns .btn_ngo {
+    background-color: #E74C3C;
+}
+.special_section_btns .btn_directory {
+    background-color: #3CE7BF;
+}
+.special_section_btns .btn_freeList {
+    background-color: #E7BF3C;
+}
+.special_section_btns .btn_events {
+    background-color: #C75800;
+}
+
+.sepcial_section_btns_two {
+    border-top: 1px solid #0081C7;
+    position: absolute;
+    z-index: 1000000;
+    width: 100%;
+    height: 240px;
+    background-color: #fff;
+    top: 50px;
+    left: 0;
+    /* right: 0; */
+    border-radius: 0 0 50px 50px;
+}
+.sepcial_section_btns_two ul {
+    padding: 20px;
+}
+.sepcial_section_btns_two ul div {
+    padding: 10px 0;
+    color: #0081C7;
+    /* color: black; */
+}
+.special_section_two {
+    display: none;
+}
+
+.special_section_two.active {
+    display: block;
+}
+@media (max-width: 500px) {
+    .special_section {
+        display: none;
+    }
+
+
+}
