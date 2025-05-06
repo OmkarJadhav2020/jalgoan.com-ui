@@ -1,22 +1,15 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'next/navigation';
-import Link from 'next/link';
-import Navbar from '../../../components/Navbar/Navbar';
-import Footer from '../../../components/Footer/Footer';
-import LoginSignup from '../../../components/LoginSignup/LoginSignup';
-import BusinessDetailsCard from '../../../components/Businesscompo/BusinessDetailsCard';
-import CompanyWork from '../../../components/Businesscompo/CompanyWork';
-import BusinessContact from '../../../components/Businesscompo/BusinessContact';
+import { useParams, useRouter } from 'next/navigation';
 import axios from 'axios';
-import '../../../pages/pageUtil.css';
+import { getShopUrl } from '../../../utils/slugUtils';
 
-function BusinessDetailsPage() {
+function ProductViewRedirect() {
   const params = useParams();
+  const router = useRouter();
   const productId = params.productId;
   const djangoApi = process.env.NEXT_PUBLIC_DJANGO_API;
-  const [businessData, setBusinessData] = useState({});
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -25,53 +18,37 @@ function BusinessDetailsPage() {
     const fetchData = async () => {
       try {
         setLoading(true);
-        console.log("Fetching data...");
+        console.log("Fetching data for redirect...");
         const response = await axios.get(`${djangoApi}/app/business-view/`, {
           params: { productId },
           headers: {
-            Authorization: `Token ${token || ''}` // Using Token authentication scheme
+            Authorization: `Token ${token || ''}` 
           }
         });
-        setBusinessData(response.data);
-        console.log(response.data);
-        console.log("Data fetched successfully");
-        setLoading(false);
+        
+        // Get the business data
+        const businessData = response.data;
+        
+        // Create the SEO-friendly URL with business name
+        const shopUrl = getShopUrl(productId, businessData.business_name);
+        
+        // Redirect to the new URL
+        router.push(shopUrl);
       } catch (error) {
-        console.log(error);
+        console.error("Error fetching data for redirect:", error);
+        // If there's an error, stay on the current page
         setLoading(false);
       }
     };
 
     fetchData();
-  }, [productId, djangoApi]);
+  }, [productId, djangoApi, router]);
 
   return (
-    <div className='main_section'>
-      <Navbar />
-      {loading ? (
-        <div style={{ marginTop: '150px', padding: '20px' }}>
-          <p>Loading business details...</p>
-        </div>
-      ) : (
-        <>
-          <div className="page_location_tow">
-            <Link href='/'>Home</Link> &gt; Search &gt; {businessData.main_category && (
-              <Link href={`/categories/${businessData.main_category_id}/${businessData.main_category}`}>
-                {businessData.main_category}
-              </Link>
-            )} &gt; <span>{businessData.business_name}</span>
-          </div>
-          <BusinessDetailsCard businessData={businessData}/>
-          <div className="company_contact_details">
-            <CompanyWork businessData={businessData}/>
-            <BusinessContact businessData={businessData}/> 
-          </div>
-        </>
-      )}
-      <Footer />
-      <LoginSignup />
+    <div style={{ marginTop: '150px', padding: '20px', textAlign: 'center' }}>
+      <p>Redirecting to shop page...</p>
     </div>
   );
 }
 
-export default BusinessDetailsPage;
+export default ProductViewRedirect;
