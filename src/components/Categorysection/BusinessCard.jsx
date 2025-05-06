@@ -4,6 +4,7 @@ import React, { useContext, useState } from 'react';
 import Link from 'next/link';
 import { UserContext } from '../../context/UserContext';
 import axios from 'axios';
+import { getShopUrl } from '../../utils/slugUtils';
 
 function BusinessCard({ businessData, is_like, is_edit = false }) {
   const [isFirstImageLoaded, setIsFirstImageLoaded] = useState(true);
@@ -71,6 +72,9 @@ function BusinessCard({ businessData, is_like, is_edit = false }) {
     }
   };
 
+  // Generate the shop URL using our utility function
+  const shopUrl = getShopUrl(businessData.id, businessData.business_name);
+
   return (
     <div className="business_card">
       <div className="business_imgg">
@@ -124,14 +128,14 @@ function BusinessCard({ businessData, is_like, is_edit = false }) {
           >
             <i className='bx bxs-phone'></i> Call Us
           </a>
-          <Link href={`/productView/${businessData.id}`}>
+          <Link href={shopUrl}>
             <p>View Details</p>
           </Link>
           <p onClick={(e) => {
             e.preventDefault();
             e.stopPropagation();
             
-            const url = `${window.location.origin}/productView/${businessData.id}`;
+            const url = `${window.location.origin}${shopUrl}`;
             if (navigator.share) {
               navigator.share({
                 title: businessData.business_name,

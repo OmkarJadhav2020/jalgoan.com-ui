@@ -3,12 +3,15 @@
 import React from 'react';
 import './BusinessCompo.css';
 import Link from 'next/link';
+import { getShopUrl } from '../../utils/slugUtils';
 
 function BusinessDetailsCard({ businessData }) {
   const djangoApi = process.env.NEXT_PUBLIC_DJANGO_API;
   
   const handleShare = () => {
-    const currentUrl = window.location.href; // Get current URL
+    // Create SEO-friendly URL with the business name
+    const shopUrl = getShopUrl(businessData.id, businessData.business_name);
+    const currentUrl = window.location.origin + shopUrl;
   
     navigator.clipboard.writeText(currentUrl).then(() => {
       // Successfully copied to clipboard

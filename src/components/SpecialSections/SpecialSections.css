@@ -48,21 +48,65 @@
     position: absolute;
     z-index: 1000000;
     width: 100%;
-    height: 240px;
+    height: auto; /* Changed from fixed height to auto */
+    max-height: 70vh; /* Add max height with scroll if too tall */
+    overflow-y: auto; /* Add scroll if content is too tall */
     background-color: #fff;
     top: 50px;
     left: 0;
     /* right: 0; */
     border-radius: 0 0 50px 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for better visibility */
 }
+
 .sepcial_section_btns_two ul {
     padding: 20px;
+    list-style: none;
 }
+
 .sepcial_section_btns_two ul div {
-    padding: 10px 0;
+    padding: 15px 10px; /* Increased padding for better touch targets */
+    margin-bottom: 5px; /* Add space between menu items */
     color: #0081C7;
-    /* color: black; */
+    border-bottom: 1px solid #f1f1f1; /* Add subtle separator */
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
 }
+
+/* Style for account button */
+.special_btn_two.account_btn {
+    color: #0081C7;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.special_btn_two.account_btn i,
+.special_btn_two.add_listing_btn i,
+.special_btn_two.logout_btn i {
+    font-size: 22px;
+    margin-right: 10px;
+}
+
+/* Style for add listing button */
+.special_btn_two.add_listing_btn {
+    color: #0081C7;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Style for logout button */
+.special_btn_two.logout_btn {
+    color: #E74C3C;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 .special_section_two {
     display: none;
 }
@@ -70,10 +114,19 @@
 .special_section_two.active {
     display: block;
 }
+
 @media (max-width: 500px) {
     .special_section {
         display: none;
     }
 
-
+    /* Make mobile menu take full width */
+    .sepcial_section_btns_two {
+        width: 100%;
+    }
+    
+    /* Improve spacing for mobile */
+    .sepcial_section_btns_two ul div {
+        padding: 12px 8px;
+    }
 }
