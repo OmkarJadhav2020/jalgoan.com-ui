@@ -63,6 +63,7 @@ function LoginSignup() {
     }
   };
 
+  // Modified section in LoginSignup.jsx (around line 100-120)
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
     const csrfToken = await getCsrfToken();
@@ -83,9 +84,14 @@ function LoginSignup() {
       setIsLogin(true);
       localStorage.setItem('token', token);
       localStorage.setItem('user', JSON.stringify(user));
-      setCloseForm(true);
-      console.log('Login successful', user);
+
+      // Always set hasVisited to true after successful login
       localStorage.setItem("hasVisited", "true");
+
+      // Close the form after successful login
+      setCloseForm(true);
+
+      console.log('Login successful', user);
 
       // Fetch token key
       await getTokenKey(csrfToken);
@@ -178,14 +184,14 @@ function LoginSignup() {
           <label htmlFor={`${registerFormId}-user-password`}>Password</label>
           <div className="number_input">
             <img src={assets.flag} alt="Flag" />
-            <input 
-              type="password" 
-              placeholder='password' 
-              name='password' 
-              value={userPassword} 
-              id={`${registerFormId}-user-password`} 
-              onChange={(e) => setUserPassword(e.target.value)} 
-              required 
+            <input
+              type="password"
+              placeholder='password'
+              name='password'
+              value={userPassword}
+              id={`${registerFormId}-user-password`}
+              onChange={(e) => setUserPassword(e.target.value)}
+              required
             />
           </div>
           <span>By Login or Signup I accept terms and conditions</span>
@@ -231,14 +237,14 @@ function LoginSignup() {
           <label htmlFor={`${loginFormId}-user-password`}>Password</label>
           <div className="number_input">
             <img src={assets.flag} alt="Flag" />
-            <input 
-              type="password" 
-              placeholder='password' 
-              name='password' 
-              value={userPassword} 
-              id={`${loginFormId}-user-password`} 
-              onChange={(e) => setUserPassword(e.target.value)} 
-              required 
+            <input
+              type="password"
+              placeholder='password'
+              name='password'
+              value={userPassword}
+              id={`${loginFormId}-user-password`}
+              onChange={(e) => setUserPassword(e.target.value)}
+              required
             />
           </div>
           <span>By Login or Signup I accept terms and conditions</span>

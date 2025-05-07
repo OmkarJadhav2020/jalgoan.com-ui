@@ -16,20 +16,22 @@ import Bottomnav from "@/components/Bottomnav/Bottomnav";
 
 export default function Home() {
   const [showPopup, setShowPopup] = useState(false);
-  const { closeForm, setCloseForm } = useContext(FormContext);
+  const { closeForm, setCloseForm, initialized } = useContext(FormContext);
   const { user } = useContext(UserContext);
 
   useEffect(() => {
-    // Fix: Only check hasVisited once when component mounts
-    const hasVisited = localStorage.getItem("hasVisited");
-    if (hasVisited === null || hasVisited === "false") {
-      // Set this once, not in a way that would cause re-renders
-      setCloseForm(false); // Show the form instead of toggling
+    // Only run if the form context has been initialized
+    if (initialized) {
+      const token = localStorage.getItem('token');
+      const hasVisited = localStorage.getItem('hasVisited');
+
+      // Only show form if user is not logged in AND hasn't visited before
+      if (!token && (!hasVisited || hasVisited === 'false')) {
+        setCloseForm(false);
+      }
     }
-    // Intentionally NOT including setCloseForm in dependency array
-    // as it would cause unnecessary re-renders
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);  // Empty dependency array = run only once on mount
+    // Only depend on initialized so this runs just once after initialization
+  }, [initialized, setCloseForm]);
 
   return (
     <div className="main_section">
@@ -41,7 +43,7 @@ export default function Home() {
       <RelatedArticles />
       <SpecialSections />
       <LoginSignup />
-      <Bottomnav/>
+      <Bottomnav />
     </div>
   );
 }
