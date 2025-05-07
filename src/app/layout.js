@@ -1,9 +1,15 @@
+// src/app/layout.js
 import './globals.css';
 import Providers from './providers';
 
 export const metadata = {
   title: 'Jalgaon.com',
   description: 'Discover Jalgaon businesses and services',
+  icons: {
+    icon: [
+      { url: '/icon.png' },
+    ],
+  },
 };
 
 export default function RootLayout({ children }) {

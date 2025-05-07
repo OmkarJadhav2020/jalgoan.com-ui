@@ -26,7 +26,9 @@ export default function Home() {
       // Set this once, not in a way that would cause re-renders
       setCloseForm(false); // Show the form instead of toggling
     }
-    // DO NOT include closeForm or setCloseForm in the dependency array
+    // Intentionally NOT including setCloseForm in dependency array
+    // as it would cause unnecessary re-renders
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);  // Empty dependency array = run only once on mount
 
   return (
