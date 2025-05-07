@@ -12,6 +12,7 @@ import SpecialSections from '../components/SpecialSections/SpecialSections';
 import LoginSignup from '../components/LoginSignup/LoginSignup';
 import { FormContext } from "../context/FormContext";
 import { UserContext } from '../context/UserContext';
+import Bottomnav from "@/components/Bottomnav/Bottomnav";
 
 export default function Home() {
   const [showPopup, setShowPopup] = useState(false);
@@ -38,6 +39,7 @@ export default function Home() {
       <RelatedArticles />
       <SpecialSections />
       <LoginSignup />
+      <Bottomnav/>
     </div>
   );
 }

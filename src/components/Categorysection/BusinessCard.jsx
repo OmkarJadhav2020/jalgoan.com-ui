@@ -78,6 +78,7 @@ function BusinessCard({ businessData, is_like, is_edit = false }) {
   return (
     <div className="business_card">
       <div className="business_imgg">
+      <Link href={shopUrl}>
         <img
           src={getImageUrl(businessData.business_banner)}
           alt="Business Banner"
@@ -86,6 +87,7 @@ function BusinessCard({ businessData, is_like, is_edit = false }) {
             e.target.src = '/placeholder-image.jpg'; // Fallback image
           }}
         />
+                  </Link>
       </div>
       <div className="business_info">
         <p className='business_name'>
